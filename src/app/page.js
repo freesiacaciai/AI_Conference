@@ -62,16 +62,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="site-header">
-        <div className="header-content">
-          <div className="header-icon">🤖</div>
-          <h1>AI 학회 캘린더</h1>
-          <p>인공지능 학회 · 세미나 · 컨퍼런스 일정을 한눈에</p>
-        </div>
-      </header>
-      <div className="calendar-container">
-        <CalendarClient events={events} />
-      </div>
+      <CalendarClient events={events} />
     </main>
   )
 }
