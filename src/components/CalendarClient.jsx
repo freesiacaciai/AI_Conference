@@ -49,7 +49,7 @@ export default function CalendarClient({ events }) {
     <>
       <header className="site-header">
         <div className="header-content">
-          <div className="header-icon">🤖</div>
+          <div className="header-icon">🔬</div>
           <h1>{t.siteTitle}</h1>
           <p>{t.siteSubtitle}</p>
           <div className="lang-switcher">
