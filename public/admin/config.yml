@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: https://aiconferences.netlify.app/.netlify/identity
+  gateway_url: https://aiconferences.netlify.app/.netlify/git
+
+site_url: https://aiconferences.netlify.app
 
 media_folder: public/images
 public_folder: /images
