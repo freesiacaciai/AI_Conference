@@ -2,7 +2,7 @@
 title: AWS Summit Seoul
 start_date: 2026-05-20
 end_date: 2026-05-21
-location: 서울 코엑
+location: 서울 코엑스
 organizer: AWS
 category: Seminar
 description: >-
