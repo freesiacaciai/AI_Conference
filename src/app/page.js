@@ -3,6 +3,19 @@ import path from 'path'
 import matter from 'gray-matter'
 import CalendarClient from '@/components/CalendarClient'
 
+const CATEGORY_COLORS = {
+  Conference: '#3B82F6',  // 파랑
+  Workshop:   '#8B5CF6',  // 보라
+  Seminar:    '#06B6D4',  // 하늘
+  Symposium:  '#10B981',  // 초록
+  Other:      '#6B7280',  // 회색
+}
+
+function resolveColor(color, category) {
+  if (color === '#EF4444' || color === '#F59E0B') return color
+  return CATEGORY_COLORS[category] || '#3B82F6'
+}
+
 function toDateString(value) {
   if (!value) return ''
   if (value instanceof Date) {
@@ -42,8 +55,8 @@ function getEvents() {
         title: data.title || '제목 없음',
         start: startDate,
         end: endDate ? addOneDay(endDate) : addOneDay(startDate),
-        backgroundColor: data.color || '#3B82F6',
-        borderColor: data.color || '#3B82F6',
+        backgroundColor: resolveColor(data.color, data.category),
+        borderColor: resolveColor(data.color, data.category),
         extendedProps: {
           startDisplay: startDate,
           endDisplay: endDate,

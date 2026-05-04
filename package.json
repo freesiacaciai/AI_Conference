@@ -8,13 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18",
-    "react-dom": "^18",
     "@fullcalendar/core": "^6.1.11",
-    "@fullcalendar/react": "^6.1.11",
     "@fullcalendar/daygrid": "^6.1.11",
     "@fullcalendar/interaction": "^6.1.11",
-    "gray-matter": "^4.0.3"
+    "@fullcalendar/react": "^6.1.11",
+    "framer-motion": "^12.38.0",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.0",
+    "react": "^18",
+    "react-dom": "^18"
   }
 }

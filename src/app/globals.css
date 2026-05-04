@@ -234,12 +234,6 @@ html, body {
   justify-content: center;
   z-index: 9999;
   padding: 1rem;
-  animation: fadeIn 0.15s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
 }
 
 /* ─── Modal ─── */
@@ -251,13 +245,7 @@ html, body {
   max-width: 480px;
   box-shadow: var(--shadow-lg);
   position: relative;
-  animation: slideUp 0.2s ease;
   overflow: hidden;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(16px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0)   scale(1);    }
 }
 
 .modal-close-btn {
@@ -376,6 +364,198 @@ html, body {
 .link-btn:hover {
   background: #4f46e5;
   transform: translateY(-1px);
+}
+
+/* ─── Toolbar (view toggle + csv) ─── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-toggle {
+  display: flex;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-3);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 3px;
+}
+
+.view-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.view-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.view-btn.active {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.csv-btn {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10B981;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.csv-btn:hover {
+  background: rgba(16, 185, 129, 0.22);
+}
+
+/* ─── Event List ─── */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.event-list-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.875rem;
+}
+
+.event-list-section-title.muted {
+  color: var(--text-subtle);
+}
+
+.event-list-count {
+  background: var(--surface-2);
+  border: 1px solid var(--surface-3);
+  color: var(--text-subtle);
+  border-radius: 20px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.upcoming-dot { background: var(--primary); }
+.past-dot     { background: var(--text-subtle); }
+
+.event-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.past-section {
+  opacity: 0.7;
+}
+
+/* ─── Event Card ─── */
+.event-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.1s;
+}
+
+.event-card:hover {
+  background: var(--surface-2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.event-card-header {
+  margin-bottom: 0.625rem;
+}
+
+.event-card-badge {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 0.15rem 0.625rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.event-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.event-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.event-card-meta-item {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.event-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  white-space: pre-wrap;
+}
+
+.event-card-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.event-card-link:hover {
+  color: white;
+}
+
+.no-events {
+  text-align: center;
+  color: var(--text-subtle);
+  padding: 3rem 0;
+  font-size: 0.9375rem;
 }
 
 /* ─── Responsive ─── */
