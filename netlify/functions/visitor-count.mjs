@@ -1,6 +1,6 @@
-const { getStore } = require('@netlify/blobs')
+import { getStore } from '@netlify/blobs'
 
-exports.handler = async function (event) {
+export default async function (request) {
   try {
     const store = getStore('visitors')
     const today = new Date().toISOString().split('T')[0]
@@ -8,7 +8,7 @@ exports.handler = async function (event) {
     let total = parseInt((await store.get('total')) || '0')
     let daily = parseInt((await store.get(`day-${today}`)) || '0')
 
-    if (event.httpMethod === 'POST') {
+    if (request.method === 'POST') {
       total += 1
       daily += 1
       await Promise.all([
@@ -17,16 +17,14 @@ exports.handler = async function (event) {
       ])
     }
 
-    return {
-      statusCode: 200,
+    return new Response(JSON.stringify({ today: daily, total }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ today: daily, total }),
-    }
-  } catch {
-    return {
-      statusCode: 200,
+    })
+  } catch (err) {
+    return new Response(JSON.stringify({ today: 0, total: 0, error: err.message }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ today: 0, total: 0 }),
-    }
+    })
   }
 }
