@@ -558,6 +558,45 @@ html, body {
   font-size: 0.9375rem;
 }
 
+/* ─── Visitor Footer ─── */
+.visitor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem 3rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.visitor-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.visitor-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  color: var(--text-subtle);
+}
+
+.visitor-count {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  letter-spacing: -0.02em;
+}
+
+.visitor-divider {
+  width: 1px;
+  height: 44px;
+  background: var(--border);
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 640px) {
   .fc {

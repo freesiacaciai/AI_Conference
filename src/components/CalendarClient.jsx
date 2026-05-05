@@ -10,6 +10,7 @@ import esLocale from '@fullcalendar/core/locales/es'
 import { translations } from '@/lib/i18n'
 import EventModal from './EventModal'
 import EventList from './EventList'
+import VisitorCount from './VisitorCount'
 
 const LANGS = [
   { code: 'ko', flag: '🇰🇷', label: '한국어' },
@@ -227,6 +228,8 @@ export default function CalendarClient({ events }) {
           />
         )}
       </AnimatePresence>
+
+      <VisitorCount t={t} />
     </>
   )
 }

@@ -13,6 +13,8 @@ export const translations = {
     past: '지난 일정',
     noEvents: '등록된 일정이 없습니다',
     csvDownload: 'CSV 다운로드',
+    todayVisitors: '오늘 방문자',
+    totalVisitors: '누계 방문자',
     categories: {
       Conference: '컨퍼런스',
       Workshop: '워크샵',
@@ -35,6 +37,8 @@ export const translations = {
     past: 'Past Events',
     noEvents: 'No events found',
     csvDownload: 'Download CSV',
+    todayVisitors: "Today's Visitors",
+    totalVisitors: 'Total Visitors',
     categories: {
       Conference: 'Conference',
       Workshop: 'Workshop',
@@ -57,6 +61,8 @@ export const translations = {
     past: 'Pasados',
     noEvents: 'No hay eventos',
     csvDownload: 'Descargar CSV',
+    todayVisitors: 'Visitantes Hoy',
+    totalVisitors: 'Total Visitantes',
     categories: {
       Conference: 'Conferencia',
       Workshop: 'Taller',
